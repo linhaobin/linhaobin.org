@@ -378,13 +378,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*:
-  version "2.4.1"
-  resolved "http://registry.npm.taobao.org/debug/download/debug-2.4.1.tgz#ef2532d2753d282045c13c82ce47a09e56b91d53"
-  dependencies:
-    ms "0.7.2"
-
-debug@~2.2.0:
+debug@*, debug@~2.2.0:
   version "2.2.0"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
@@ -811,7 +805,7 @@ hexo-renderer-ejs@^0.2.0:
     ejs "^1.0.0"
     object-assign "^4.0.1"
 
-hexo-renderer-marked@^0.2.10:
+hexo-renderer-marked@^0.2.11:
   version "0.2.11"
   resolved "http://registry.npm.taobao.org/hexo-renderer-marked/download/hexo-renderer-marked-0.2.11.tgz#32fd3880d3c3979fd7b8015ec121a6c44ff49f84"
   dependencies:
@@ -852,7 +846,7 @@ hexo-util@^0.6.0:
     html-entities "^1.2.0"
     striptags "^2.1.1"
 
-hexo@^3.2.0:
+hexo@^3.2.2:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/hexo/download/hexo-3.2.2.tgz#9b8e7022aec95e02021cec140afd7888d4ceb931"
   dependencies:
@@ -1234,10 +1228,6 @@ ms@0.7.1:
   version "0.7.1"
   resolved "http://registry.npm.taobao.org/ms/download/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
 
-ms@0.7.2:
-  version "0.7.2"
-  resolved "http://registry.npm.taobao.org/ms/download/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
-
 mv@~2:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/mv/download/mv-2.1.1.tgz#ae6ce0d6f6d5e0a4f7d893798d03c1ea9559b6a2"
@@ -1364,13 +1354,7 @@ on-headers@~1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/on-headers/download/on-headers-1.0.1.tgz#928f5d0f470d49342651ea6794b0857c100693f7"
 
-once@^1.3.0:
-  version "1.4.0"
-  resolved "http://registry.npm.taobao.org/once/download/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
-  dependencies:
-    wrappy "1"
-
-once@~1.3.3:
+once@^1.3.0, once@~1.3.3:
   version "1.3.3"
   resolved "http://registry.npm.taobao.org/once/download/once-1.3.3.tgz#b2e261557ce4c314ec8304f3fa82663e4297ca20"
   dependencies:
@@ -1653,15 +1637,9 @@ sntp@1.x.x:
   dependencies:
     hoek "2.x.x"
 
-source-map@0.1.34:
+source-map@0.1.34, source-map@0.1.x:
   version "0.1.34"
   resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.1.34.tgz#a7cfe89aec7b1682c3b198d0acfb47d7d090566b"
-  dependencies:
-    amdefine ">=0.0.4"
-
-source-map@0.1.x:
-  version "0.1.43"
-  resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
     amdefine ">=0.0.4"
 
