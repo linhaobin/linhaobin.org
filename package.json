@@ -1,9 +1,12 @@
 {
-  "name": "hexo-site",
+  "name": "linhaobin.org",
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": ""
+    "version": "3.2.2"
+  },
+  "scripts": {
+    "server": "./node_modules/hexo-cli/bin/hexo server -p 8080"
   },
   "dependencies": {
     "hexo": "^3.2.2",
