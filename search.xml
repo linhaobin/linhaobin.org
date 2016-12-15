@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[yarn 快速，可靠和安全的依赖管理]]></title>
+      <url>http://linhaobin.org/2016/12/15/yarn%20%E5%BF%AB%E9%80%9F%EF%BC%8C%E5%8F%AF%E9%9D%A0%E5%92%8C%E5%AE%89%E5%85%A8%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</url>
+      <content type="html"><![CDATA[<h1 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h1><ul>
+<li><strong>快速</strong><br>缓存下载过的每个包，不需要再次下载。操作并行化，以最大化资源利用率，因此安装时间比以往更快。</li>
+<li><strong>安全</strong><br>在执行代码之前，Yarn会校验每个已安装的软件包的完整性。</li>
+<li><strong>可靠</strong><br>简洁的lockfile格式和一个确定性的安装算法，Yarn能够保证在在任何其他系统上工作方式完全相同。</li>
+</ul>
+<p><a href="https://yarnpkg.com/" target="_blank" rel="external">官网</a><br><a href="https://yarnpkg.com/en/docs/" target="_blank" rel="external">文档</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yarn</div></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="开始新的项目"><a href="#开始新的项目" class="headerlink" title="开始新的项目"></a>开始新的项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure>
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn add [package]</div><div class="line">yarn add [package]@[version]</div><div class="line">yarn add [package]@[tag]</div></pre></td></tr></table></figure>
+<p>使用<code>--dev</code>或<code>-D</code>将安装到<code>devDependencies</code>中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add &lt;package...&gt; [--dev/-D]</div></pre></td></tr></table></figure></p>
+<h2 id="升级依赖"><a href="#升级依赖" class="headerlink" title="升级依赖"></a>升级依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn upgrade [package]</div><div class="line">yarn upgrade [package]@[version]</div><div class="line">yarn upgrade [package]@[tag]</div></pre></td></tr></table></figure>
+<h2 id="移除依赖"><a href="#移除依赖" class="headerlink" title="移除依赖"></a>移除依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn remove [package]</div></pre></td></tr></table></figure>
+<h2 id="安装所有依赖"><a href="#安装所有依赖" class="headerlink" title="安装所有依赖"></a>安装所有依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn install</div></pre></td></tr></table></figure></p>
+<h1 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h1><h2 id="更新yarn"><a href="#更新yarn" class="headerlink" title="更新yarn"></a>更新yarn</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn self-update</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+  
+  
+</search>
