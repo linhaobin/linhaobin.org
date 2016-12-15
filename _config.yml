@@ -70,5 +70,5 @@ theme: material
 deploy:
   type: git
   repo: https://github.com/linhaobin/linhaobin.org
-  branch: 
+  branch: public
   message: 
