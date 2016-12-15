@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Title -->
+    
+    <title>
+        yarn 快速，可靠和安全的依赖管理 | LinHaobin
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="林浩彬">
+    <meta name="description" content="null">
+    <meta name="keywords" content="linhaobin, 前端开发">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="LinHaobin">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://linhaobin.org">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="yarn 快速，可靠和安全的依赖管理 | LinHaobin">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Yarn"><span class="post-toc-number">1.</span> <span class="post-toc-text">Yarn</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始新的项目"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">开始新的项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加依赖"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">添加依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#升级依赖"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">升级依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移除依赖"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">移除依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装所有依赖"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">安装所有依赖</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他常用命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新yarn"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">更新yarn</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		<!-- Custom Thumbnail -->
+		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/posts/yarn/yarn.png)">
+	
+        <p class="article-headline-p">
+            yarn 快速，可靠和安全的依赖管理
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>林浩彬</strong>
+        <span>12月 15, 2016</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/node/">node</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/package/">package</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/yarn/">yarn</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/开发/">开发</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=yarn 快速，可靠和安全的依赖管理&url=http://linhaobin.org//2016/12/15/yarn 快速，可靠和安全的依赖管理/index.html&via=林浩彬" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://linhaobin.org//2016/12/15/yarn 快速，可靠和安全的依赖管理/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=yarn 快速，可靠和安全的依赖管理&url=http://linhaobin.org//2016/12/15/yarn 快速，可靠和安全的依赖管理/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
+</div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<h1 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h1><ul>
+<li><strong>快速</strong><br>缓存下载过的每个包，不需要再次下载。操作并行化，以最大化资源利用率，因此安装时间比以往更快。</li>
+<li><strong>安全</strong><br>在执行代码之前，Yarn会校验每个已安装的软件包的完整性。</li>
+<li><strong>可靠</strong><br>简洁的lockfile格式和一个确定性的安装算法，Yarn能够保证在在任何其他系统上工作方式完全相同。</li>
+</ul>
+<p><a href="https://yarnpkg.com/" target="_blank" rel="external">官网</a><br><a href="https://yarnpkg.com/en/docs/" target="_blank" rel="external">文档</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yarn</div></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="开始新的项目"><a href="#开始新的项目" class="headerlink" title="开始新的项目"></a>开始新的项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure>
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn add [package]</div><div class="line">yarn add [package]@[version]</div><div class="line">yarn add [package]@[tag]</div></pre></td></tr></table></figure>
+<p>使用<code>--dev</code>或<code>-D</code>将安装到<code>devDependencies</code>中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add &lt;package...&gt; [--dev/-D]</div></pre></td></tr></table></figure></p>
+<h2 id="升级依赖"><a href="#升级依赖" class="headerlink" title="升级依赖"></a>升级依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn upgrade [package]</div><div class="line">yarn upgrade [package]@[version]</div><div class="line">yarn upgrade [package]@[tag]</div></pre></td></tr></table></figure>
+<h2 id="移除依赖"><a href="#移除依赖" class="headerlink" title="移除依赖"></a>移除依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn remove [package]</div></pre></td></tr></table></figure>
+<h2 id="安装所有依赖"><a href="#安装所有依赖" class="headerlink" title="安装所有依赖"></a>安装所有依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn install</div></pre></td></tr></table></figure></p>
+<h1 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h1><h2 id="更新yarn"><a href="#更新yarn" class="headerlink" title="更新yarn"></a>更新yarn</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn self-update</div></pre></td></tr></table></figure>
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="林浩彬's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        linhaobin28@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+	
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a>
+        </ul>
+    </li>
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">1</span>
+        </a>
+    </li>
+</ul>
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+    
+    <!-- Facebook -->
+    
+    
+    
+    <!-- Google + -->
+    
+    
+    
+    <!-- Weibo -->
+    
+    
+    
+    <!-- Instagram -->
+    
+    
+    
+    <!-- Tumblr -->
+    
+    
+    
+    <!-- Github -->
+    
+    <a href="https://github.com/linhaobin" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;LinHaobin</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>
