@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title></title>
+      <link href="/2017/06/27/%E7%AC%AC1%E7%AB%A0-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+      <url>/2017/06/27/%E7%AC%AC1%E7%AB%A0-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第1章-作用域是什么"><a href="#第1章-作用域是什么" class="headerlink" title="第1章 作用域是什么"></a>第1章 作用域是什么</h1><p>#javascript/你不知道的javascript/第1章# </p><h2 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h2><p>JavaScript编译过程不是发生在构建之前的，任何JavaScript代码片段在执行前都要进行编译（通常就在执行前），并且马上就会执行。</p><h2 id="理解作用域"><a href="#理解作用域" class="headerlink" title="理解作用域"></a>理解作用域</h2><ul><li><p><strong>引擎</strong>、<strong>编译器</strong>、<strong>作用域</strong></p></li><li><p>变量赋值：</p><pre><code>1. `编译器`在当前`作用域`中声明变量（如果之前没有声明过）2. `引擎`在`作用域`中查找变量，如果找到就赋值</code></pre></li><li></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>JsFiddle</title>
+      <link href="/2016/12/16/JsFiddle/"/>
+      <url>/2016/12/16/JsFiddle/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JSFiddle-在线JS代码调试工具"><a href="#JSFiddle-在线JS代码调试工具" class="headerlink" title="JSFiddle:在线JS代码调试工具"></a>JSFiddle:在线JS代码调试工具</h1><p><a href="https://jsfiddle.net" target="_blank" rel="external">https://jsfiddle.net</a></p><iframe width="100%" height="300" src="//jsfiddle.net/linhaobin/kfoahdxw/2/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe><h2 id="unpkg使用简单的URL来加载发布到npm库"><a href="#unpkg使用简单的URL来加载发布到npm库" class="headerlink" title="unpkg使用简单的URL来加载发布到npm库"></a>unpkg使用简单的URL来加载发布到npm库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">https://unpkg.com/package@version/file</div></pre></td></tr></table></figure><h2 id="嵌入到页面"><a href="#嵌入到页面" class="headerlink" title="嵌入到页面"></a>嵌入到页面</h2><p>JsFiddle上方Embed菜单自动生成代码<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">src</span>=<span class="string">"//jsfiddle.net/linhaobin/kfoahdxw/2/embedded/js,html,result/"</span> <span class="attr">allowfullscreen</span>=<span class="string">"allowfullscreen"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span>/&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+          <category> 前端 </category>
+          
+          <category> JsFiddle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JsFiddle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>yarn 快速，可靠和安全的依赖管理</title>
+      <link href="/2016/12/15/yarn%20%E5%BF%AB%E9%80%9F%EF%BC%8C%E5%8F%AF%E9%9D%A0%E5%92%8C%E5%AE%89%E5%85%A8%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/"/>
+      <url>/2016/12/15/yarn%20%E5%BF%AB%E9%80%9F%EF%BC%8C%E5%8F%AF%E9%9D%A0%E5%92%8C%E5%AE%89%E5%85%A8%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h1><ul><li><strong>快速</strong><br>缓存下载过的每个包，不需要再次下载。操作并行化，以最大化资源利用率，因此安装时间比以往更快。</li><li><strong>安全</strong><br>在执行代码之前，Yarn会校验每个已安装的软件包的完整性。</li><li><strong>可靠</strong><br>简洁的lockfile格式和一个确定性的安装算法，Yarn能够保证在在任何其他系统上工作方式完全相同。</li></ul><p><a href="https://yarnpkg.com/" target="_blank" rel="external">官网</a><br><a href="https://yarnpkg.com/en/docs/" target="_blank" rel="external">文档</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install -g yarn</div></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="开始新的项目"><a href="#开始新的项目" class="headerlink" title="开始新的项目"></a>开始新的项目</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure><h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn add [package]</div><div class="line">yarn add [package]@[version]</div><div class="line">yarn add [package]@[tag]</div></pre></td></tr></table></figure><p>使用<code>--dev</code>或<code>-D</code>将安装到<code>devDependencies</code>中。<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn add &lt;package...&gt; [--dev/-D]</div></pre></td></tr></table></figure></p><h2 id="升级依赖"><a href="#升级依赖" class="headerlink" title="升级依赖"></a>升级依赖</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn upgrade [package]</div><div class="line">yarn upgrade [package]@[version]</div><div class="line">yarn upgrade [package]@[tag]</div></pre></td></tr></table></figure><h2 id="移除依赖"><a href="#移除依赖" class="headerlink" title="移除依赖"></a>移除依赖</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn remove [package]</div></pre></td></tr></table></figure><h2 id="安装所有依赖"><a href="#安装所有依赖" class="headerlink" title="安装所有依赖"></a>安装所有依赖</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn</div></pre></td></tr></table></figure><p>或者<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn install</div></pre></td></tr></table></figure></p><h1 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h1><h2 id="更新yarn"><a href="#更新yarn" class="headerlink" title="更新yarn"></a>更新yarn</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yarn self-update</div></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+          <category> node </category>
+          
+          <category> package </category>
+          
+          <category> yarn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> node </tag>
+            
+            <tag> package </tag>
+            
+            <tag> yarn </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>
