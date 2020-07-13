@@ -3,17 +3,6 @@ services:
 
   nginx:
     container_name: linhaobin.org
-    image: nginx:alpine
-    networks:
-      - nginx
-    volumes:
-      - "./public:/usr/share/nginx/html:ro"
-    environment:
-      - VIRTUAL_HOST=www.linhaobin.com
-      - VIRTUAL_PORT=80
-
-networks:
-  nginx:
-    external: true
-    name: nginx
-      
+    build: 
+      context: ./
+      dockerfile: Dockerfile
