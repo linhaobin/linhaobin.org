@@ -3,17 +3,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2017/06/27/%E7%AC%AC1%E7%AB%A0-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-      <url>/2017/06/27/%E7%AC%AC1%E7%AB%A0-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第1章-作用域是什么"><a href="#第1章-作用域是什么" class="headerlink" title="第1章 作用域是什么"></a>第1章 作用域是什么</h1><p>#javascript/你不知道的javascript/第1章# </p><h2 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h2><p>JavaScript编译过程不是发生在构建之前的，任何JavaScript代码片段在执行前都要进行编译（通常就在执行前），并且马上就会执行。</p><h2 id="理解作用域"><a href="#理解作用域" class="headerlink" title="理解作用域"></a>理解作用域</h2><ul><li><p><strong>引擎</strong>、<strong>编译器</strong>、<strong>作用域</strong></p></li><li><p>变量赋值：</p><pre><code>1. `编译器`在当前`作用域`中声明变量（如果之前没有声明过）2. `引擎`在`作用域`中查找变量，如果找到就赋值</code></pre></li><li></li></ul>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
       <title>JsFiddle</title>
       <link href="/2016/12/16/JsFiddle/"/>
       <url>/2016/12/16/JsFiddle/</url>
